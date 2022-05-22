@@ -3,27 +3,27 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "app_id": {
       "required": false,
-      "example": "`A12345`",
+      "example": "A12345",
       "desc": "The id of the app to restrict."
     },
     "enterprise_id": {
       "required": false,
-      "example": "`E12345`",
+      "example": "E12345",
       "desc": "The ID of the enterprise to approve the app on"
     },
     "request_id": {
       "required": false,
-      "example": "`Ar12345`",
+      "example": "Ar12345",
       "desc": "The id of the request to restrict."
     },
     "team_id": {
       "required": false,
-      "example": "`T12345`",
+      "example": "T12345",
       "desc": "The ID of the workspace to approve the app on"
     }
   },

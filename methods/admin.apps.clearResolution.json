@@ -3,22 +3,22 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "app_id": {
       "required": true,
-      "example": "`A12345`",
+      "example": "A12345",
       "desc": "The id of the app whose resolution you want to clear/undo."
     },
     "enterprise_id": {
       "required": false,
-      "example": "`E12345`",
+      "example": "E12345",
       "desc": "The enterprise to clear the app resolution from"
     },
     "team_id": {
       "required": false,
-      "example": "`T12345`",
+      "example": "T12345",
       "desc": "The workspace to clear the app resolution from"
     }
   },
