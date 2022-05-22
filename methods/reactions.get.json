@@ -3,32 +3,32 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "channel": {
       "required": false,
-      "example": "`C0NF841BK`",
+      "example": "C0NF841BK",
       "desc": "Channel where the message to get reactions for was posted."
     },
     "file": {
       "required": false,
-      "example": "`F1234567890`",
+      "example": "F1234567890",
       "desc": "File to get reactions for."
     },
     "file_comment": {
       "required": false,
-      "example": "`Fc1234567890`",
+      "example": "Fc1234567890",
       "desc": "File comment to get reactions for."
     },
     "full": {
       "required": false,
-      "example": "`true`",
+      "example": "true",
       "desc": "If true always return the complete reaction list."
     },
     "timestamp": {
       "required": false,
-      "example": "`1524523204.000192`",
+      "example": "1524523204.000192",
       "desc": "Timestamp of the message to get reactions for."
     }
   },

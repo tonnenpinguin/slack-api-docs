@@ -3,22 +3,22 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "usergroup": {
       "required": true,
-      "example": "`S0604QSJC`",
+      "example": "S0604QSJC",
       "desc": "The encoded ID of the User Group to disable."
     },
     "include_count": {
       "required": false,
-      "example": "`true`",
+      "example": "true",
       "desc": "Include the number of users in the User Group."
     },
     "team_id": {
       "required": false,
-      "example": "`T1234567890`",
+      "example": "T1234567890",
       "desc": "Encoded team id where the user group is, required if org token is used."
     }
   },

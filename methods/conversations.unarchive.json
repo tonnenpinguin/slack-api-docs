@@ -3,12 +3,12 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "channel": {
       "required": true,
-      "example": "`C1234567890`",
+      "example": "C1234567890",
       "desc": "ID of conversation to unarchive"
     }
   },

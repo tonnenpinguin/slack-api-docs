@@ -3,27 +3,27 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "include_count": {
       "required": false,
-      "example": "`true`",
+      "example": "true",
       "desc": "Include the number of users in each User Group."
     },
     "include_disabled": {
       "required": false,
-      "example": "`true`",
+      "example": "true",
       "desc": "Include disabled User Groups."
     },
     "include_users": {
       "required": false,
-      "example": "`true`",
+      "example": "true",
       "desc": "Include the list of users for each User Group."
     },
     "team_id": {
       "required": false,
-      "example": "`T1234567890`",
+      "example": "T1234567890",
       "desc": "encoded team id to list user groups in, required if org token is used"
     }
   },

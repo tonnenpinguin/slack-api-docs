@@ -3,27 +3,27 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "before": {
       "required": false,
-      "example": "`now``1457989166`",
+      "example": "now",
       "desc": "End of time range of logs to include in results (inclusive)."
     },
     "count": {
       "required": false,
-      "example": "`100``20`",
+      "example": "100",
       "desc": "Number of items to return per page."
     },
     "page": {
       "required": false,
-      "example": "`1``2`",
+      "example": "1",
       "desc": "Page number of results to return."
     },
     "team_id": {
       "required": false,
-      "example": "`T1234567890`",
+      "example": "T1234567890",
       "desc": "encoded team id to get logs from, required if org token is used"
     }
   },

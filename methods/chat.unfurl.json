@@ -3,12 +3,12 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "channel": {
       "required": true,
-      "example": "`C1234567890`",
+      "example": "C1234567890",
       "desc": "Channel ID of the message. Both `channel` and `ts` must be provided together, _or_ `unfurl_id` and `source` must be provided together."
     },
     "ts": {
@@ -23,12 +23,12 @@
     },
     "source": {
       "required": false,
-      "example": "`composer`",
+      "example": "composer",
       "desc": "The source of the link to unfurl. The source may either be `composer`, when the link is inside the message composer, or `conversations_history`, when the link has been posted to a conversation."
     },
     "unfurl_id": {
       "required": false,
-      "example": "`Uxxxxxxx-909b5454-75f8-4ac4-b325-1b40e230bbd8`",
+      "example": "Uxxxxxxx-909b5454-75f8-4ac4-b325-1b40e230bbd8",
       "desc": "The ID of the link to unfurl. Both `unfurl_id` and `source` must be provided together, _or_ `channel` and `ts` must be provided together."
     },
     "user_auth_blocks": {
@@ -43,12 +43,12 @@
     },
     "user_auth_required": {
       "required": false,
-      "example": "`0``true`",
+      "example": "0",
       "desc": "Set to `true` or `1` to indicate the user must install your Slack app to trigger unfurls for this domain"
     },
     "user_auth_url": {
       "required": false,
-      "example": "`https://example.com/onboarding?user_id=xxx`",
+      "example": "https://example.com/onboarding?user_id=xxx",
       "desc": "Send users to this custom URL where they will complete authentication in your app to fully trigger unfurling. Value should be properly URL-encoded."
     }
   },

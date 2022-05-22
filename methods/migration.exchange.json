@@ -3,7 +3,7 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "users": {
@@ -13,12 +13,12 @@
     },
     "team_id": {
       "required": false,
-      "example": "`T1234567890`",
+      "example": "T1234567890",
       "desc": "Specify team\\_id starts with `T` in case of Org Token"
     },
     "to_old": {
       "required": false,
-      "example": "```true`",
+      "example": "",
       "desc": "Specify `true` to convert `W` global user IDs to workspace-specific `U` IDs. Defaults to `false`."
     }
   },

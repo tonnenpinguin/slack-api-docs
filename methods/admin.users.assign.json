@@ -3,7 +3,7 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "team_id": {
@@ -18,17 +18,17 @@
     },
     "channel_ids": {
       "required": false,
-      "example": "```C123,C3456`",
+      "example": "",
       "desc": "Comma separated values of channel IDs to add user in the new workspace."
     },
     "is_restricted": {
       "required": false,
-      "example": "```true`",
+      "example": "",
       "desc": "True if user should be added to the workspace as a guest."
     },
     "is_ultra_restricted": {
       "required": false,
-      "example": "```true`",
+      "example": "",
       "desc": "True if user should be added to the workspace as a single-channel guest."
     }
   },

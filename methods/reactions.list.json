@@ -3,42 +3,42 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "count": {
       "required": false,
-      "example": "`100``20`",
+      "example": "100",
       "desc": "Number of items to return per page."
     },
     "cursor": {
       "required": false,
-      "example": "`dXNlcjpVMDYxTkZUVDI=`",
+      "example": "dXNlcjpVMDYxTkZUVDI=",
       "desc": "Parameter for pagination. Set `cursor` equal to the `next_cursor` attribute returned by the previous request's `response_metadata`. This parameter is optional, but pagination is mandatory: the default value simply fetches the first \"page\" of the collection. See [pagination](/docs/pagination) for more details."
     },
     "full": {
       "required": false,
-      "example": "`true`",
+      "example": "true",
       "desc": "If true always return the complete reaction list."
     },
     "limit": {
       "required": false,
-      "example": "`0``20`",
+      "example": "0",
       "desc": "The maximum number of items to return. Fewer than the requested number of items may be returned, even if the end of the list hasn't been reached."
     },
     "page": {
       "required": false,
-      "example": "`1``2`",
+      "example": "1",
       "desc": "Page number of results to return."
     },
     "team_id": {
       "required": false,
-      "example": "`T1234567890`",
+      "example": "T1234567890",
       "desc": "encoded team id to list reactions in, required if org token is used"
     },
     "user": {
       "required": false,
-      "example": "`W1234567890`",
+      "example": "W1234567890",
       "desc": "Show reactions made by this user. Defaults to the authed user."
     }
   },

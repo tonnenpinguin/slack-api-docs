@@ -3,17 +3,17 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "id": {
       "required": true,
-      "example": "`R0E69JAIF`",
+      "example": "R0E69JAIF",
       "desc": "`id` returned by the [`calls.add`](/methods/calls.add) method."
     },
     "users": {
       "required": true,
-      "example": "`[{\"slack_id\": \"U1H77\"}, {\"external_id\": \"54321678\", \"display_name\": \"External User\", \"avatar_url\": \"https://example.com/users/avatar1234.jpg\"}]`",
+      "example": "[{\"slack_id\": \"U1H77\"}, {\"external_id\": \"54321678\", \"display_name\": \"External User\", \"avatar_url\": \"https://example.com/users/avatar1234.jpg\"}]",
       "desc": "The list of users to add as participants in the Call. [Read more on how to specify users here](/apis/calls#users)."
     }
   },

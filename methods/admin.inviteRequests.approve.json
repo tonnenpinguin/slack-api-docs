@@ -3,12 +3,12 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "invite_request_id": {
       "required": true,
-      "example": "`Ir1234`",
+      "example": "Ir1234",
       "desc": "ID of the request to invite."
     },
     "team_id": {

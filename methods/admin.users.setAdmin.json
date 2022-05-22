@@ -3,7 +3,7 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "team_id": {
@@ -13,7 +13,7 @@
     },
     "user_id": {
       "required": true,
-      "example": "`W12345678`",
+      "example": "W12345678",
       "desc": "The ID of the user to designate as an admin."
     }
   },

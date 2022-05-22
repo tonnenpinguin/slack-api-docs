@@ -3,17 +3,17 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "channel": {
       "required": true,
-      "example": "`C012345678`",
+      "example": "C012345678",
       "desc": "Channel or conversation to set the read cursor for."
     },
     "ts": {
       "required": true,
-      "example": "`1593473566.000200`",
+      "example": "1593473566.000200",
       "desc": "Unique identifier of message you want marked as most recently seen in this conversation."
     }
   },

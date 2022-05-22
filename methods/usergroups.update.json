@@ -3,12 +3,12 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "usergroup": {
       "required": true,
-      "example": "`S0604QSJC`",
+      "example": "S0604QSJC",
       "desc": "The encoded ID of the User Group to update."
     },
     "channels": {
@@ -23,22 +23,22 @@
     },
     "handle": {
       "required": false,
-      "example": "`marketing`",
+      "example": "marketing",
       "desc": "A mention handle. Must be unique among channels, users and User Groups."
     },
     "include_count": {
       "required": false,
-      "example": "`true`",
+      "example": "true",
       "desc": "Include the number of users in the User Group."
     },
     "name": {
       "required": false,
-      "example": "`My Test Team`",
+      "example": "My Test Team",
       "desc": "A name for the User Group. Must be unique among User Groups."
     },
     "team_id": {
       "required": false,
-      "example": "`T1234567890`",
+      "example": "T1234567890",
       "desc": "encoded team id where the user group exists, required if org token is used"
     }
   },

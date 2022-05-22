@@ -3,17 +3,17 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "query": {
       "required": true,
-      "example": "`pickleface`",
+      "example": "pickleface",
       "desc": "Search query."
     },
     "count": {
       "required": false,
-      "example": "`20``20`",
+      "example": "20",
       "desc": "Number of items to return per page."
     },
     "cursor": {
@@ -23,27 +23,27 @@
     },
     "highlight": {
       "required": false,
-      "example": "`true`",
+      "example": "true",
       "desc": "Pass a value of `true` to enable query highlight markers (see below)."
     },
     "page": {
       "required": false,
-      "example": "`1``2`",
+      "example": "1",
       "desc": "Page number of results to return."
     },
     "sort": {
       "required": false,
-      "example": "`score``timestamp`",
+      "example": "score",
       "desc": "Return matches sorted by either `score` or `timestamp`."
     },
     "sort_dir": {
       "required": false,
-      "example": "`desc``asc`",
+      "example": "desc",
       "desc": "Change sort direction to ascending (`asc`) or descending (`desc`)."
     },
     "team_id": {
       "required": false,
-      "example": "`T1234567890`",
+      "example": "T1234567890",
       "desc": "encoded team id to search in, required if org token is used"
     }
   },

@@ -3,17 +3,17 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "session_id": {
       "required": true,
-      "example": "`12345`",
+      "example": "12345",
       "desc": "ID of the session to invalidate."
     },
     "team_id": {
       "required": true,
-      "example": "`T1234`",
+      "example": "T1234",
       "desc": "ID of the workspace that the session belongs to."
     }
   },

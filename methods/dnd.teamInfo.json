@@ -3,17 +3,17 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "users": {
       "required": true,
-      "example": "`U1234,W4567`",
+      "example": "U1234,W4567",
       "desc": "Comma-separated list of users to fetch Do Not Disturb status for"
     },
     "team_id": {
       "required": false,
-      "example": "`T1234567890`",
+      "example": "T1234567890",
       "desc": "Encoded team id where passed in users belong, required if org token is used"
     }
   },

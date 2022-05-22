@@ -3,27 +3,27 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "is_private": {
       "required": true,
-      "example": "`true`",
+      "example": "true",
       "desc": "When `true`, creates a private channel instead of a public channel"
     },
     "name": {
       "required": true,
-      "example": "`mychannel`",
+      "example": "mychannel",
       "desc": "Name of the public or private channel to create."
     },
     "description": {
       "required": false,
-      "example": "`It's a good channel, Bront.`",
+      "example": "It's a good channel, Bront.",
       "desc": "Description of the public or private channel to create."
     },
     "org_wide": {
       "required": false,
-      "example": "`false``true`",
+      "example": "false",
       "desc": "When `true`, the channel will be available org-wide. Note: if the channel is not `org_wide=true`, you must specify a `team_id` for this channel"
     },
     "team_id": {

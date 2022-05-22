@@ -3,22 +3,22 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "request_id": {
       "required": true,
-      "example": "`Ar12345`",
+      "example": "Ar12345",
       "desc": "The id of the request to cancel."
     },
     "enterprise_id": {
       "required": false,
-      "example": "`E12345`",
+      "example": "E12345",
       "desc": "The ID of the enterprise where this request belongs"
     },
     "team_id": {
       "required": false,
-      "example": "`T12345`",
+      "example": "T12345",
       "desc": "The ID of the workspace where this request belongs"
     }
   },

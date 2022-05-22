@@ -3,17 +3,17 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "batch_presence_aware": {
       "required": false,
-      "example": "```1`",
+      "example": "",
       "desc": "Batch presence deliveries via subscription. Enabling changes the shape of `presence_change` events. See [batch presence](/docs/presence-and-status#batching)."
     },
     "presence_sub": {
       "required": false,
-      "example": "`1``true`",
+      "example": "1",
       "desc": "Only deliver presence events when requested by subscription. See [presence subscriptions](/docs/presence-and-status#subscriptions)."
     }
   },

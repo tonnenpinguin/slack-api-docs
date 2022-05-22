@@ -3,12 +3,12 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "test": {
       "required": false,
-      "example": "`true`",
+      "example": "true",
       "desc": "Setting this parameter to `1` triggers a _testing mode_ where the specified token will not actually be revoked."
     }
   },

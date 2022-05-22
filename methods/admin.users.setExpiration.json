@@ -3,17 +3,17 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "expiration_ts": {
       "required": true,
-      "example": "`1234567890`",
+      "example": "1234567890",
       "desc": "Timestamp when guest account should be disabled."
     },
     "user_id": {
       "required": true,
-      "example": "`W12345678`",
+      "example": "W12345678",
       "desc": "The ID of the user to set an expiration for."
     },
     "team_id": {

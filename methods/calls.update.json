@@ -3,27 +3,27 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "id": {
       "required": true,
-      "example": "`R0E69JAIF`",
+      "example": "R0E69JAIF",
       "desc": "`id` returned by the [`calls.add`](/methods/calls.add) method."
     },
     "desktop_app_join_url": {
       "required": false,
-      "example": "`callapp://join/0987654321`",
+      "example": "callapp://join/0987654321",
       "desc": "When supplied, available Slack clients will attempt to directly launch the 3rd-party Call with this URL."
     },
     "join_url": {
       "required": false,
-      "example": "`https://example.com/calls/0987654321`",
+      "example": "https://example.com/calls/0987654321",
       "desc": "The URL required for a client to join the Call."
     },
     "title": {
       "required": false,
-      "example": "`Kimpossible sync up call`",
+      "example": "Kimpossible sync up call",
       "desc": "The name of the Call."
     }
   },

@@ -3,32 +3,32 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "name": {
       "required": true,
-      "example": "`thumbsup`",
+      "example": "thumbsup",
       "desc": "Reaction (emoji) name."
     },
     "channel": {
       "required": false,
-      "example": "`C1234567890`",
+      "example": "C1234567890",
       "desc": "Channel where the message to remove reaction from was posted."
     },
     "file": {
       "required": false,
-      "example": "`F1234567890`",
+      "example": "F1234567890",
       "desc": "File to remove reaction from."
     },
     "file_comment": {
       "required": false,
-      "example": "`Fc1234567890`",
+      "example": "Fc1234567890",
       "desc": "File comment to remove reaction from."
     },
     "timestamp": {
       "required": false,
-      "example": "`1234567890.123456`",
+      "example": "1234567890.123456",
       "desc": "Timestamp of the message to remove reaction from."
     }
   },

@@ -3,7 +3,7 @@
   "args": {
     "error": {
       "required": false,
-      "example": "`my_error`",
+      "example": "my_error",
       "desc": "Error response to return"
     }
   },

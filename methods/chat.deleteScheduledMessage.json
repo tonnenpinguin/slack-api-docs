@@ -3,22 +3,22 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "channel": {
       "required": true,
-      "example": "`C123456789`",
+      "example": "C123456789",
       "desc": "The channel the scheduled\\_message is posting to"
     },
     "scheduled_message_id": {
       "required": true,
-      "example": "`Q1234ABCD`",
+      "example": "Q1234ABCD",
       "desc": "`scheduled_message_id` returned from call to chat.scheduleMessage"
     },
     "as_user": {
       "required": false,
-      "example": "`true`",
+      "example": "true",
       "desc": "Pass true to delete the message as the authed user with `chat:write:user` scope. [Bot users](/bot-users) in this context are considered authed users. If unused or false, the message will be deleted with `chat:write:bot` scope."
     }
   },

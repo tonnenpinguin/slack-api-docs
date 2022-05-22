@@ -3,17 +3,17 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "cursor": {
       "required": false,
-      "example": "`5c3e53d5`",
+      "example": "5c3e53d5",
       "desc": "Set `cursor` to `next_cursor` returned by the previous call to list items in the next page"
     },
     "limit": {
       "required": false,
-      "example": "`100``100`",
+      "example": "100",
       "desc": "The maximum number of items to return. Must be between 1 - 1000 both inclusive."
     }
   },

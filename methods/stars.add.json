@@ -3,27 +3,27 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "channel": {
       "required": false,
-      "example": "`C1234567890`",
+      "example": "C1234567890",
       "desc": "Channel to add star to, or channel where the message to add star to was posted (used with `timestamp`)."
     },
     "file": {
       "required": false,
-      "example": "`F1234567890`",
+      "example": "F1234567890",
       "desc": "File to add star to."
     },
     "file_comment": {
       "required": false,
-      "example": "`Fc1234567890`",
+      "example": "Fc1234567890",
       "desc": "File comment to add star to."
     },
     "timestamp": {
       "required": false,
-      "example": "`1234567890.123456`",
+      "example": "1234567890.123456",
       "desc": "Timestamp of the message to add star to."
     }
   },

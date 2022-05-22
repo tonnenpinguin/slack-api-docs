@@ -3,12 +3,12 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "channel_name": {
       "required": true,
-      "example": "`puppies-r-us`",
+      "example": "puppies-r-us",
       "desc": "Name of the channel. If the channel does not exist already in your workspace, this name is the one that the channel will take."
     },
     "channel_id": {
@@ -18,7 +18,7 @@
     },
     "free_trial_accepted": {
       "required": false,
-      "example": "`true`",
+      "example": "true",
       "desc": "Whether you'd like to use your workspace's free trial to begin using Slack Connect."
     },
     "invite_id": {
@@ -28,12 +28,12 @@
     },
     "is_private": {
       "required": false,
-      "example": "`true`",
+      "example": "true",
       "desc": "Whether the channel should be private."
     },
     "team_id": {
       "required": false,
-      "example": "`T1234567890`",
+      "example": "T1234567890",
       "desc": "The ID of the workspace to accept the channel in. If an org-level token is used to call this method, the `team_id` argument is required."
     }
   },

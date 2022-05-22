@@ -3,22 +3,22 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "team_ids": {
       "required": true,
-      "example": "`T12345678,T98765432`",
+      "example": "T12345678,T98765432",
       "desc": "A comma separated list of encoded team (workspace) IDs. Each workspace _MUST_ belong to the organization associated with the token."
     },
     "usergroup_id": {
       "required": true,
-      "example": "`S12345678`",
+      "example": "S12345678",
       "desc": "An encoded usergroup (IDP Group) ID."
     },
     "auto_provision": {
       "required": false,
-      "example": "`false``true`",
+      "example": "false",
       "desc": "When `true`, this method automatically creates new workspace accounts for the IDP group members."
     }
   },

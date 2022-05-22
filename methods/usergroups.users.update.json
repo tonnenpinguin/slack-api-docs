@@ -3,27 +3,27 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "usergroup": {
       "required": true,
-      "example": "`S0604QSJC`",
+      "example": "S0604QSJC",
       "desc": "The encoded ID of the User Group to update."
     },
     "users": {
       "required": true,
-      "example": "`U060R4BJ4,U060RNRCZ`",
+      "example": "U060R4BJ4,U060RNRCZ",
       "desc": "A comma separated string of encoded user IDs that represent the entire list of users for the User Group."
     },
     "include_count": {
       "required": false,
-      "example": "`true`",
+      "example": "true",
       "desc": "Include the number of users in the User Group."
     },
     "team_id": {
       "required": false,
-      "example": "`T1234567890`",
+      "example": "T1234567890",
       "desc": "encoded team id where the user group exists, required if org token is used"
     }
   },

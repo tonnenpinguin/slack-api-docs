@@ -3,17 +3,17 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "channel_id": {
       "required": true,
-      "example": "`C12345`",
+      "example": "C12345",
       "desc": "The channel that the users will be invited to."
     },
     "user_ids": {
       "required": true,
-      "example": "`U1234,U2345,U3456`",
+      "example": "U1234,U2345,U3456",
       "desc": "The users to invite."
     }
   },

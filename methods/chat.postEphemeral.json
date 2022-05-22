@@ -3,67 +3,67 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "channel": {
       "required": true,
-      "example": "`C1234567890`",
+      "example": "C1234567890",
       "desc": "Channel, private group, or IM channel to send message to. Can be an encoded ID, or a name."
     },
     "text": {
       "required": true,
-      "example": "`Hello world`",
+      "example": "Hello world",
       "desc": "How this field works and whether it is required depends on other fields you use in your API call. [See below](#text_usage) for more detail."
     },
     "user": {
       "required": true,
-      "example": "`U0BPQUNTA`",
+      "example": "U0BPQUNTA",
       "desc": "`id` of the user who will receive the ephemeral message. The user should be in the channel specified by the `channel` argument."
     },
     "as_user": {
       "required": false,
-      "example": "`true`",
+      "example": "true",
       "desc": "Pass true to post the message as the authed user. Defaults to true if the chat:write:bot scope is not included. Otherwise, defaults to false."
     },
     "attachments": {
       "required": false,
-      "example": "`[{\"pretext\": \"pre-hello\", \"text\": \"text-world\"}]`",
+      "example": "[{\"pretext\": \"pre-hello\", \"text\": \"text-world\"}]",
       "desc": "A JSON-based array of structured attachments, presented as a URL-encoded string."
     },
     "blocks": {
       "required": false,
-      "example": "`[{\"type\": \"section\", \"text\": {\"type\": \"plain_text\", \"text\": \"Hello world\"}}]`",
+      "example": "[{\"type\": \"section\", \"text\": {\"type\": \"plain_text\", \"text\": \"Hello world\"}}]",
       "desc": "A JSON-based array of structured blocks, presented as a URL-encoded string."
     },
     "icon_emoji": {
       "required": false,
-      "example": "`:chart_with_upwards_trend:`",
+      "example": ":chart_with_upwards_trend:",
       "desc": "Emoji to use as the icon for this message. Overrides `icon_url`. Must be used in conjunction with `as_user` set to `false`, otherwise ignored. See [authorship](#authorship) below."
     },
     "icon_url": {
       "required": false,
-      "example": "`http://lorempixel.com/48/48`",
+      "example": "http://lorempixel.com/48/48",
       "desc": "URL to an image to use as the icon for this message. Must be used in conjunction with `as_user` set to false, otherwise ignored. See [authorship](#authorship) below."
     },
     "link_names": {
       "required": false,
-      "example": "`true`",
+      "example": "true",
       "desc": "Find and link channel names and usernames."
     },
     "parse": {
       "required": false,
-      "example": "`full`",
+      "example": "full",
       "desc": "Change how messages are treated. Defaults to `none`. See [below](#formatting)."
     },
     "thread_ts": {
       "required": false,
-      "example": "`1234567890.123456`",
+      "example": "1234567890.123456",
       "desc": "Provide another message's `ts` value to post this message in a thread. Avoid using a reply's `ts` value; use its parent's value instead. Ephemeral messages in threads are only shown if there is already an active thread."
     },
     "username": {
       "required": false,
-      "example": "`My Bot`",
+      "example": "My Bot",
       "desc": "Set your bot's user name. Must be used in conjunction with `as_user` set to false, otherwise ignored. See [authorship](#authorship) below."
     }
   },

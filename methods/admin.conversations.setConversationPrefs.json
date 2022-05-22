@@ -3,17 +3,17 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "channel_id": {
       "required": true,
-      "example": "`C1234`",
+      "example": "C1234",
       "desc": "The channel to set the prefs for"
     },
     "prefs": {
       "required": true,
-      "example": "`{'who_can_post':'type:admin,user:U1234'}`",
+      "example": "{'who_can_post':'type:admin,user:U1234'}",
       "desc": "The prefs for this channel in a stringified JSON format."
     }
   },

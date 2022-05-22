@@ -3,22 +3,22 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "channel": {
       "required": true,
-      "example": "`C1234567890`",
+      "example": "C1234567890",
       "desc": "Channel containing the message to be deleted."
     },
     "ts": {
       "required": true,
-      "example": "`\"1405894322.002768\"`",
+      "example": "\"1405894322.002768\"",
       "desc": "Timestamp of the message to be deleted."
     },
     "as_user": {
       "required": false,
-      "example": "`true`",
+      "example": "true",
       "desc": "Pass true to delete the message as the authed user with `chat:write:user` scope. [Bot users](/bot-users) in this context are considered authed users. If unused or false, the message will be deleted with `chat:write:bot` scope."
     }
   },

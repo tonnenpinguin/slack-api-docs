@@ -3,17 +3,17 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "team_id": {
       "required": false,
-      "example": "`T1234567890`",
+      "example": "T1234567890",
       "desc": "Encoded team id where passed in user param belongs, required if org token is used. If no user param is passed, then a team which has access to the app should be passed"
     },
     "user": {
       "required": false,
-      "example": "`U1234`",
+      "example": "U1234",
       "desc": "User to fetch status for (defaults to current user)"
     }
   },

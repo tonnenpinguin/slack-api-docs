@@ -3,17 +3,17 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "channel_ids": {
       "required": true,
-      "example": "`C1A2B3C4D,C26Z25Y24`",
+      "example": "C1A2B3C4D,C26Z25Y24",
       "desc": "A comma-separated list of `channel_id`s for this user to join. At least one channel is required."
     },
     "email": {
       "required": true,
-      "example": "`joe@email.com`",
+      "example": "joe@email.com",
       "desc": "The email address of the person to invite."
     },
     "team_id": {
@@ -23,37 +23,37 @@
     },
     "custom_message": {
       "required": false,
-      "example": "`Come and join our team!`",
+      "example": "Come and join our team!",
       "desc": "An optional message to send to the user in the invite email."
     },
     "email_password_policy_enabled": {
       "required": false,
-      "example": "`true`",
+      "example": "true",
       "desc": "Allow invited user to sign in via email and password. Only available for Enterprise Grid teams via admin invite."
     },
     "guest_expiration_ts": {
       "required": false,
-      "example": "`0123456789.012345`",
+      "example": "0123456789.012345",
       "desc": "Timestamp when guest account should be disabled. Only include this timestamp if you are inviting a guest user and you want their account to expire on a certain date."
     },
     "is_restricted": {
       "required": false,
-      "example": "`true`",
+      "example": "true",
       "desc": "Is this user a multi-channel guest user? (default: false)"
     },
     "is_ultra_restricted": {
       "required": false,
-      "example": "`true`",
+      "example": "true",
       "desc": "Is this user a single channel guest user? (default: false)"
     },
     "real_name": {
       "required": false,
-      "example": "`{\"full_name\":\"Joe Smith\"}`",
+      "example": "{\"full_name\":\"Joe Smith\"}",
       "desc": "Full name of the user."
     },
     "resend": {
       "required": false,
-      "example": "`true`",
+      "example": "true",
       "desc": "Allow this invite to be resent in the future if a user has not signed up yet. (default: false)"
     }
   },

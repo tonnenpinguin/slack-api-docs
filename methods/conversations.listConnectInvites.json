@@ -3,22 +3,22 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "count": {
       "required": false,
-      "example": "`100`",
+      "example": "100",
       "desc": "Maximum number of invites to return"
     },
     "cursor": {
       "required": false,
-      "example": "`5c3e53d5`",
+      "example": "5c3e53d5",
       "desc": "Set to `next_cursor` returned by previous call to list items in subsequent page"
     },
     "team_id": {
       "required": false,
-      "example": "`T1234567890`",
+      "example": "T1234567890",
       "desc": "Encoded team id for the workspace to retrieve invites for, required if org token is used"
     }
   },

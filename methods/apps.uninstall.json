@@ -3,17 +3,17 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "client_id": {
       "required": true,
-      "example": "`56579136444.26251006572`",
+      "example": "56579136444.26251006572",
       "desc": "Issued when you created your application."
     },
     "client_secret": {
       "required": true,
-      "example": "`f25b5ceaf8a3c2a2c4f52bb4f0b0499e`",
+      "example": "f25b5ceaf8a3c2a2c4f52bb4f0b0499e",
       "desc": "Issued when you created your application."
     }
   },

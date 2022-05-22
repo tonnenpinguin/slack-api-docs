@@ -3,7 +3,7 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "dialog": {
@@ -13,7 +13,7 @@
     },
     "trigger_id": {
       "required": true,
-      "example": "`12345.98765.abcd2358fdea`",
+      "example": "12345.98765.abcd2358fdea",
       "desc": "Exchange a trigger to post to the user."
     }
   },

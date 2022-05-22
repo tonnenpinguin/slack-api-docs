@@ -3,17 +3,17 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "external_id": {
       "required": false,
-      "example": "`123456`",
+      "example": "123456",
       "desc": "Creator defined GUID for the file."
     },
     "file": {
       "required": false,
-      "example": "`F2147483862`",
+      "example": "F2147483862",
       "desc": "Specify a file by providing its ID."
     }
   },

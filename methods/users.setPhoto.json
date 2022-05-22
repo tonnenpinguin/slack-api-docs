@@ -3,27 +3,27 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "crop_w": {
       "required": false,
-      "example": "`100`",
+      "example": "100",
       "desc": "Width/height of crop box (always square)"
     },
     "crop_x": {
       "required": false,
-      "example": "`10`",
+      "example": "10",
       "desc": "X coordinate of top-left corner of crop box"
     },
     "crop_y": {
       "required": false,
-      "example": "`15`",
+      "example": "15",
       "desc": "Y coordinate of top-left corner of crop box"
     },
     "image": {
       "required": false,
-      "example": "`...`",
+      "example": "...",
       "desc": "File contents via `multipart/form-data`."
     }
   },

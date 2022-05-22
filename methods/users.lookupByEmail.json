@@ -3,12 +3,12 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "email": {
       "required": true,
-      "example": "`spengler@ghostbusters.example.com`",
+      "example": "spengler@ghostbusters.example.com",
       "desc": "An email address belonging to a user in the workspace"
     }
   },

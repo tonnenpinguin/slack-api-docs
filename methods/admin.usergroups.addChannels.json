@@ -3,22 +3,22 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "channel_ids": {
       "required": true,
-      "example": "`C00000000,C00000001`",
+      "example": "C00000000,C00000001",
       "desc": "Comma separated string of channel IDs."
     },
     "usergroup_id": {
       "required": true,
-      "example": "`S00000000`",
+      "example": "S00000000",
       "desc": "ID of the IDP group to add default channels for."
     },
     "team_id": {
       "required": false,
-      "example": "`T00000000`",
+      "example": "T00000000",
       "desc": "The workspace to add default channels in."
     }
   },

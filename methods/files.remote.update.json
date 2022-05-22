@@ -3,42 +3,42 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "external_id": {
       "required": false,
-      "example": "`123456`",
+      "example": "123456",
       "desc": "Creator defined GUID for the file."
     },
     "external_url": {
       "required": false,
-      "example": "`http://example.com/my_cloud_service_file/abc123`",
+      "example": "http://example.com/my_cloud_service_file/abc123",
       "desc": "URL of the remote file."
     },
     "file": {
       "required": false,
-      "example": "`F2147483862`",
+      "example": "F2147483862",
       "desc": "Specify a file by providing its ID."
     },
     "filetype": {
       "required": false,
-      "example": "`doc`",
+      "example": "doc",
       "desc": "type of file"
     },
     "indexable_file_contents": {
       "required": false,
-      "example": "`...`",
+      "example": "...",
       "desc": "File containing contents that can be used to improve searchability for the remote file."
     },
     "preview_image": {
       "required": false,
-      "example": "`...`",
+      "example": "...",
       "desc": "Preview of the document via `multipart/form-data`."
     },
     "title": {
       "required": false,
-      "example": "`Danger, High Voltage!`",
+      "example": "Danger, High Voltage!",
       "desc": "Title of the file being shared."
     }
   },

@@ -3,12 +3,12 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "user_ids": {
       "required": true,
-      "example": "`['U1234']`",
+      "example": "['U1234']",
       "desc": "The IDs of users you'd like to clear session settings for."
     }
   },

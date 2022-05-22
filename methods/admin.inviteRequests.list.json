@@ -3,22 +3,22 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "cursor": {
       "required": false,
-      "example": "`5cweb43`",
+      "example": "5cweb43",
       "desc": "Value of the `next_cursor` field sent as part of the previous API response"
     },
     "limit": {
       "required": false,
-      "example": "`100``100`",
+      "example": "100",
       "desc": "The number of results that will be returned by the API on each invocation. Must be between 1 - 1000, both inclusive"
     },
     "team_id": {
       "required": false,
-      "example": "``",
+      "example": "",
       "desc": "ID for the workspace where the invite requests were made."
     }
   },

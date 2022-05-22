@@ -3,7 +3,7 @@
   "args": {
     "token": {
       "required": true,
-      "example": "`xxxx-xxxxxxxxx-xxxx`",
+      "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
     },
     "channel_id": {
@@ -13,12 +13,12 @@
     },
     "org_channel": {
       "required": false,
-      "example": "`false``true`",
+      "example": "false",
       "desc": "True if channel has to be converted to an org channel"
     },
     "target_team_ids": {
       "required": false,
-      "example": "`T1234,T5678,T9012,T3456`",
+      "example": "T1234,T5678,T9012,T3456",
       "desc": "A comma-separated list of workspaces to which the channel should be shared. Not required if the channel is being shared org-wide."
     },
     "team_id": {
