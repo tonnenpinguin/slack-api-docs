@@ -162,6 +162,9 @@ This table lists the expected errors that this method could return. However, oth
 | `invalid_app_id` | 
 The app ID passed is invalid.
  |
+| `app_not_eligible` | 
+The specified app is not elgible for this API.
+ |
 | `app_not_found` | 
 The specified app was not found.
  |

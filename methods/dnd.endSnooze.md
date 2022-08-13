@@ -98,9 +98,6 @@ This table lists the expected errors that this method could return. However, oth
 | `snooze_end_failed` | 
 There was a problem setting the user's Do Not Disturb status
  |
-| `snooze_not_active` | 
-Snooze is not active for this user and cannot be ended
- |
 | `not_authed` | 
 No authentication token provided.
  |

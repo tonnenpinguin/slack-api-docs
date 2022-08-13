@@ -85,9 +85,9 @@ A comma separated list of user IDs. Up to 1000 users may be listed.
 
 This [Conversations API](/docs/conversations-api) method invites 1-1000 users to a public or private channel. The calling user must be a member of the channel.
 
-### Limits for workspace apps
+### Partially failed calls
 
-Because workspace apps can't act on behalf of users, they don't have the power to invite users to conversations, except when they're the owner/creator of the conversation.
+When some users cannot be successfully invited, only the error response will be returned. The users who can be successfully invited will still be invited, but there will not be a success response noting that.
 
 ## Example responses
 
@@ -141,12 +141,24 @@ Typical success response when an invitation is extended
 
 ### Common error response
 
-Typical error response when an invite is attempted on a conversation type that does not support it
+Error response when users cannot be invited for differing reasons: one for not being associated with a valid user ID, and one for being the user sending the invite.
 
 ```
 {
     "ok": false,
-    "error": "method_not_supported_for_channel_type"
+    "error": "user_not_found",
+    "errors": [
+        {
+            "user": "U111111",
+            "ok": false,
+            "error": "user_not_found"
+        },
+        {
+            "user": "U222222",
+            "ok": false,
+            "error": "cant_invite_self"
+        }
+    ]
 }
 ```
 

@@ -141,9 +141,6 @@ Unknown method
 | `ratelimited` | 
 The request has been ratelimited. Refer to the `Retry-After` header for when to retry the request.
  |
-| `client_secret_env_key_not_found` | 
-Unable to find the specified client\_secret\_env
- |
 | `not_authed` | 
 No authentication token provided.
  |

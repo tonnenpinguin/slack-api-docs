@@ -60,7 +60,7 @@ Optional arguments
 
 `bot`
 
-bot
+string
 
 _·_Optional
 
@@ -71,7 +71,7 @@ Bot user to get info on
 
 `team_id`
 
-team
+string
 
 _·_Optional
 
@@ -82,15 +82,13 @@ encoded team id or enterprise id where the bot exists, required if org token is 
 
 ## Usage info
 
-This method returns extended information about a [bot user](/bot-users).
+This method returns extended information about a [bot user](/bot-users), such as its name and icons.
 
-Per workspace, bot users have both a user ID (which can be looked up using [`users.info`](/methods/users.info)) and a "bot ID."
+The `bot` parameter is required if you want to actually return information about a bot. Use the bot's `bot_id`, which is unique for every workspace the bot is in. The `bot_id` field appears in [`bot_message`](/events/message/bot_message) message events and in the response of methods like [`conversations.history`](/methods/conversations.history).
 
-`bot_id` fields appear in [`bot_message`](/events/message/bot_message) message event subtypes and in the response of methods like [`conversations.history`](/methods/conversations.history).
+Use the `app_id` field to identify whether a bot belongs to your [Slack app](/slack-apps).
 
-Use this method to look up the username and icons for those bot users. Use the `app_id` field to identify whether a bot belongs to your [Slack app](/slack-apps).
-
-Look for a `user_id` when the bot corresponds directly to a bot user account. Some bot-like entities aren't actually "bot users" and will not include a `user_id`.
+If the bot corresponds directly to a bot user account, the bot will also have a `user_id`. You can use the `user_id` to fetch information about a bot user with the [`users.info`](/methods/users.info) method.
 
 ## Example responses
 
@@ -102,12 +100,12 @@ When successful, returns bot info by bot ID.
 {
     "ok": true,
     "bot": {
-        "id": "B061F7JD2",
+        "id": "B123456",
         "deleted": false,
         "name": "beforebot",
         "updated": 1449272004,
-        "app_id": "A161CLERW",
-        "user_id": "U012ABCDEF",
+        "app_id": "A123456",
+        "user_id": "U123456",
         "icons": {
             "image_36": "https://...",
             "image_48": "https://...",

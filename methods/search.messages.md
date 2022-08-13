@@ -163,7 +163,7 @@ When a search query matches multiple messages in close proximity to one another,
 
 Note: Previously, search results might be returned with matches on the `previous`, `previous_2`, `next`, or `next_2` messages, but not the message itself. However, the `previous`, `previous_2`, `next`, or `next_2` fields are now deprecated and will no longer be provided in responses beginning December 3, 2020.
 
-If more than one search term is provided, users and channels are also matched at a lower priority. To specifically search within a channel, group, or DM, add `in:channel_name`, `in:group_name`, or `in:@UserID`. To search for messages from a specific speaker, add `from:@UserID` or`from:botname`.
+If more than one search term is provided, users and channels are also matched at a lower priority. To specifically search within a channel, group, or DM, add `in:channel_name`, `in:group_name`, or `in:<@UserID>`. To search for messages from a specific speaker, add `from:<@UserID>` or`from:botname`.
 
 For IM results, the `type` is set to `"im"` and the `channel.name` property contains the user ID of the target user. For private group results, type is set to `"group"`.
 

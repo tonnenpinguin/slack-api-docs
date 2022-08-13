@@ -35,7 +35,7 @@ HTTP
 
 - 
 ### Rate limits
-[Tier 2](/docs/rate-limits#tier_t2)
+[Tier 3](/docs/rate-limits#tier_t3)
 
 ## Arguments
 
@@ -189,16 +189,16 @@ This table lists the expected errors that this method could return. However, oth
 | Error | Description |
 | --- | --- |
 | `feature_not_enabled` | 
-The Admin APIs feature is not enabled for this team
+The Admin APIs feature is not enabled for this team.
  |
 | `not_an_admin` | 
-The token provided is not associated with an org admin
+The token provided is not associated with an org admin.
  |
 | `channel_not_found` | 
 Value passed for `channel` was invalid.
  |
 | `channel_type_not_supported` | 
-Value passed for `channel` was a group dm, direct message, or general channel
+Value given for `channel_id` was a #general channel.
  |
 | `restricted_action` | 
 A workspace preference prevents the authenticated user from archiving.

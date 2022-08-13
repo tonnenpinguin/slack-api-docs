@@ -80,8 +80,6 @@ How this field works and whether it is required depends on other fields you use 
 
 `user`
 
-string
-
 _·_Required
 
 `id` of the user who will receive the ephemeral message. The user should be in the channel specified by the `channel` argument.

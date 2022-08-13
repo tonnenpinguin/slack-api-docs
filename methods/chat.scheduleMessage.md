@@ -97,7 +97,7 @@ boolean
 
 _·_Optional
 
-Pass true to post the message as the authed user, instead of as a bot. Defaults to false. See [chat.postMessage](chat.postMessage#authorship).
+Set to `true` to post the message as the authed user, instead of as a bot. Defaults to false. Cannot be used by [new Slack apps](/authentication/basics). See [chat.postMessage](chat.postMessage#authorship).
 
 **Example**
 `true`
@@ -130,7 +130,7 @@ boolean
 
 _·_Optional
 
-Find and link channel names and usernames.
+Find and link user groups. No longer supports linking individual users; use syntax shown in [Mentioning Users](/reference/surfaces/formatting#mentioning-users) instead.
 
 **Example**
 `true`
@@ -152,7 +152,7 @@ string
 
 _·_Optional
 
-Change how messages are treated. Defaults to `none`. See [chat.postMessage](chat.postMessage#formatting).
+Change how messages are treated. See [chat.postMessage](chat.postMessage#formatting).
 
 **Example**
 `full`
@@ -218,7 +218,7 @@ For details on formatting, usage in threads, and rate limiting, check out [`chat
 
 ## Channels
 
-You **must** specify a public channel, private channel, or an IM channel with the `channel` argument. Each one behaves slightly differently based on the authenticated user's permissions and additional arguments:
+You **must** specify a public channel, private channel, or IM channel with the `channel` argument. Each one behaves slightly differently based on the authenticated user's permissions and additional arguments:
 
 #### Post to a channel
 
@@ -239,13 +239,13 @@ Typical success response
 ```
 {
     "ok": true,
-    "channel": "C1H9RESGL",
+    "channel": "C123456",
     "scheduled_message_id": "Q1298393284",
     "post_at": "1562180400",
     "message": {
         "text": "Here's a message for you in the future",
         "username": "ecto1",
-        "bot_id": "B19LU7CSY",
+        "bot_id": "B123456",
         "attachments": [
             {
                 "text": "This is an attachment",

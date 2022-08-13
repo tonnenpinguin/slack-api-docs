@@ -54,7 +54,7 @@ Authentication token bearing required scopes. Tokens should be passed as an HTTP
 
 Optional arguments
 
-`connected_org_ids_filter`
+`connected_team_ids`
 
 array
 
@@ -275,8 +275,11 @@ This endpoint can only be called by an Enterprise organization.
 | `team_not_found` | 
 One of the workspaces provided in the list wasn't found.
  |
-| `external_org_not_connected_to_this_org` | 
-One of the orgs provided in the external connected orgs filter is not connected to the org.
+| `connected_team_passed_in_is_not_top_level_team` | 
+One of the orgs provided in the external connected teams filter is not a top level team.
+ |
+| `external_team_not_connected_to_this_org` | 
+One of the teams provided in the external connected teams filter is not connected to the org.
  |
 | `not_allowed` | 
 The authenticated user does not have the permission to call this method.

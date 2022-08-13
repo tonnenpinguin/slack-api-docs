@@ -74,9 +74,8 @@ ID of conversation to unarchive
 
 This method unarchives a conversation. The calling user is added to the conversation.
 
-### Limits for workspace apps
-
-Because workspace apps can't act on behalf of users, they don't have the power to rename conversations, except when they're the owner/creator of the conversation.
+**Bug alert**  
+Bot tokens (`xoxb-...`) cannot currently be used to unarchive conversations. For now, please use a user token (`xoxp-...`) to unarchive the conversation rather than a bot token.
 
 ## Example responses
 

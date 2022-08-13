@@ -78,16 +78,16 @@ This table lists the expected errors that this method could return. However, oth
 | Error | Description |
 | --- | --- |
 | `feature_not_enabled` | 
-The Admin APIs feature is not enabled for this team
+The Admin APIs feature is not enabled for this team.
  |
 | `not_an_admin` | 
-The token provided is not associated with an org admin
+The token provided is not associated with an org admin.
  |
 | `channel_not_found` | 
 Value given for `channel_id` was invalid.
  |
 | `channel_type_not_supported` | 
-Value given for `channel_id` was a group dm, direct message, or #general channel
+Value given for `channel_id` was a #general channel.
  |
 | `retention_override_not_allowed` | 
 The current org retention policy disallows modifying the retention policy of this channel.

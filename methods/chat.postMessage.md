@@ -106,7 +106,7 @@ boolean
 
 _·_Optional
 
-Pass true to post the message as the authed user, instead of as a bot. Defaults to false. See [authorship](#authorship) below.
+Set to `true` to post the message as the authed user, instead of as a bot. Defaults to false. Cannot be used by [new Slack apps](/authentication/basics). See [authorship](#authorship) below.
 
 **Example**
 `true`
@@ -139,7 +139,7 @@ boolean
 
 _·_Optional
 
-Find and link channel names and usernames.
+Find and link user groups. No longer supports linking individual users; use syntax shown in [Mentioning Users](/reference/surfaces/formatting#mentioning-users) instead.
 
 **Example**
 `true`
@@ -175,7 +175,7 @@ string
 
 _·_Optional
 
-Change how messages are treated. Defaults to `none`. See [below](#formatting).
+Change how messages are treated. See [below](#formatting).
 
 **Example**
 `full`
@@ -227,7 +227,7 @@ string
 
 _·_Optional
 
-Set your bot's user name. Must be used in conjunction with `as_user` set to false, otherwise ignored. See [authorship](#authorship) below.
+Set your bot's user name. Must be used in conjunction with `as_user` set to false, otherwise ignored. See [authorship](#legacy_authorship) below.
 
 **Example**
 `My Bot`
@@ -236,59 +236,63 @@ Set your bot's user name. Must be used in conjunction with `as_user` set to fals
 
 This method posts [a message](/docs/messages) to a public channel, private channel, or direct message/IM channel.
 
-Please note that the `as_user` parameter _may not_ be used by [new Slack apps](/authentication/basics). Read more about [Authorship](#authorship) to understand how `as_user` works for classic Slack apps.
+Consider reviewing our [message guidelines](/docs/message-guidelines), especially if you're using attachments or message buttons.
 
-**Using `text` with `blocks` or `attachments`**
+### Using `text` with `blocks` or `attachments` 
 
 The usage of the `text` field changes depending on whether you're using `blocks`. If you are using `blocks`, this is used as a fallback string to display in notifications. If you aren't, this is the main body text of the message. It can be formatted as plain text, or with `mrkdwn`.
 
 The `text` field is not enforced as required when using `blocks` or `attachments`. However, we highly recommended that you include `text` to provide a fallback when using `blocks`, as described above.
 
-### JSON POST support
+### JSON POST support 
 
-As of October 2017, it's now possible to send a well-formatted `application/json` POST body to `chat.postMessage` and other [Web API](/web) write methods. No need to carefully URL-encode your JSON `attachments` and present all other fields as URL encoded key/value pairs; just send JSON instead.
+When POSTing with `application/x-www-form-urlencoded` data, the optional `attachments` argument should contain a JSON-encoded array of [attachments](/docs/message-attachments).
 
-Learn more about this support in the [Web API](/web) docs or [this changelog](/changelog/2017-10-keeping-up-with-the-jsons).
-
-The response includes the "timestamp ID" (`ts`) and the channel-like thing where the message was posted. It also includes the complete message object, as parsed by our servers. This may differ from the provided arguments as our servers sanitize links, attachments, and other properties. Your message may mutate.
+As of [October 2017](/changelog/2017-10-keeping-up-with-the-jsons), it's now possible to send a well-formatted `application/json` POST body to `chat.postMessage` and other [Web API](/web) write methods. No need to carefully URL-encode your JSON `attachments` and present all other fields as URL encoded key:value pairs; just send JSON instead.
 
 ## Formatting messages 
 
-Messages are formatted as described in the [formatting spec](/docs/message-formatting). You can specify values for `parse` and `link_names` to change formatting behavior.
+Messages are formatted as described in the [formatting spec](/docs/message-formatting). The formatting behavior will change depending on the value of `parse`.
 
-When POSTing with `application/x-www-form-urlencoded` data, the optional `attachments` argument should contain a JSON-encoded array of attachments. Make it easy on yourself and send your entire messages as `application/json` instead.
+By default, URLs will be hyperlinked. Set `parse` to `none` to remove the hyperlinks.
 
-For more information, see the [attachments spec](/docs/message-attachments). If you're using a [Slack app](/slack-apps), you can also use this method to attach [message buttons](/docs/message-buttons).
+The behavior of `parse` is different for text formatted with `mrkdwn`. By default, or when `parse` is set to `none`, `mrkdwn` formatting is implemented. To ignore `mrkdwn` formatting, set `parse` to `full`.
+
+### Unfurling content 
 
 By default links to media are unfurled, but links to text content are not. Links found in [`blocks`](/reference/block-kit/blocks) will also be unfurled by default.
 
 If you want to suppress link unfurls in messages containing [blocks](/reference/block-kit/blocks), set `unfurl_links` and `unfurl_media` to false. For more information on the differences and how to control this, see the [the unfurling documentation](/docs/message-attachments#unfurling).
 
-For best results, limit the number of characters in the `text` field to 4,000 characters. Ideally, messages should be short and human-readable. Slack will [truncate messages](/changelog/2018-truncating-really-long-messages) containing more than 40,000 characters.
+### Truncating content 
 
-If you need to post longer messages, please consider [uploading a snippet instead](/methods/files.upload).
+For best results, limit the number of characters in the `text` field to 4,000 characters. Ideally, messages should be short and human-readable. Slack will [truncate messages](/changelog/2018-truncating-really-long-messages) containing more than 40,000 characters. If you need to post longer messages, please consider [uploading a snippet instead](/methods/files.upload).
 
-Consider reviewing our [message guidelines](/docs/message-guidelines), especially if you're using attachments or message buttons.
+If using `blocks`, the limit and truncation of characters will be determined by the specific type of [block](https://api.slack.com/reference/block-kit/blocks).
 
-## Threads and replies
+## Threads and replies 
 
 Provide a `thread_ts` value for the posted message to act as a reply to a parent message. Sparingly set `reply_broadcast` to `true` if your reply is important enough for everyone in the channel to receive.
 
-See [message threading](/docs/message-threading) for a more in depth look at message threading.
+See [message threading](/docs/message-threading) for a more in-depth look at message threading.
 
-## Channels
+## Channels 
 
 You **must** specify a public channel, private channel, or an IM channel with the `channel` argument. Each one behaves slightly differently based on the authenticated user's permissions and additional arguments:
 
-#### Post to a public channel
+#### Post to a public channel 
 
-Pass the channel's ID (`C024BE91L`) to the `channel` parameter and the message will be posted to that channel. The channel's ID can be retrieved through the [conversations.list](/methods/conversations.list) API method.
+Pass the channel's ID (`C123456`) to the `channel` parameter and the message will be posted to that channel. The channel's ID can be retrieved through the [conversations.list](/methods/conversations.list) API method.
 
-#### Post to a multi-person direct message
+#### Post to a private channel 
 
-As long as the authenticated user is a member of the multi-person direct message (AKA "private group" or MPIM), you can pass the group's ID (`G012AC86C`), and the message will be posted to that group. The private group's ID can be retrieved through the [conversations.list](/methods/conversations.list) API method.
+As long as the authenticated user is a member of the private channel, pass the channel's ID (`C123456`) to the `channel` parameter and the message will be posted to that channel. The private channel's ID can be retrieved through the [conversations.list](/methods/conversations.list) API method.
 
-#### Post to a direct message channel
+#### Post to a multi-person direct message channel 
+
+As long as the authenticated user is a member of the multi-person direct message (AKA "private group" or MPIM), you can pass the group's ID (`G123456`), and the message will be posted to that group. The private group's ID can be retrieved through the [conversations.list](/methods/conversations.list) API method.
+
+#### Post to a direct message channel 
 
 Posting to direct messages (also known as DMs or IMs) can be a little more complex, depending on what you actually are meaning to accomplish.
 
@@ -304,9 +308,9 @@ Passing a "username" as a `channel` value is deprecated, along with [the whole c
 
 Start a conversation with users in your [App Home](/reference/app-home).
 
-With the `chat:write` scope enabled, call `chat.postMessage` and pass a user's ID (`U0G9QF9C6`) as the value of `channel` to post to that user's App Home channel. You can use their direct message channel ID (as found with `im.open`, for instance) instead.
+With the `chat:write` scope enabled, call `chat.postMessage` and pass a user's ID (`U123456`) as the value of `channel` to post to that user's App Home channel. You can use their direct message channel ID (as found with `im.open`, for instance) instead.
 
-## Rate limiting
+## Rate limiting 
 
 `chat.postMessage` has special [rate limiting](/docs/rate-limits) conditions. It will generally allow an app to post 1 message per second to a specific channel. There are limits governing your app's relationship with the entire workspace above that, limiting posting to several hundred messages per minute. Generous burst behavior is also granted.
 
@@ -350,47 +354,44 @@ If you don't use the `as_user` parameter, `chat.postMessage` will guess the most
 
 If `as_user` is not provided at all, then the value is inferred, based on the scopes granted to the caller: If the caller _could_ post with `as_user` passed as `false`, then that is how the method behaves; otherwise, the method behaves as if `as_user` were passed as `true`.
 
-#### When `as_user` is false
+#### When `as_user` is false 
 
 When the `as_user` parameter is set to `false`, messages are posted as "[`bot_messages`](/events/message/bot_message)", with message authorship attributed to the user name and icons associated with the [Slack App](/slack-apps).
 
 With `as_user` set to `false`, you may also provide a `username` to explicitly specify the bot user's identity for this message, along with `icon_url` or `icon_emoji`.
 
-#### Effect on identity
+#### Effect on identity 
 
 Token types provide varying default identity values for `username`, `icon_url`, and `icon_emoji`.
 
-- [test tokens](/docs/oauth-test-tokens)
-  - inherits the icon and username of the token owner
-- [Slack App user token](/slack-apps) with [`chat:write:user`](/docs/oauth-scopes)
-  - inherits icon and username of the token owner
-- [Slack App bot user token](/bot-users#share_your_bot_user_as_a_slack_app)
-  - inherits Slack App's icon and app's bot username
+- [Test tokens](/docs/oauth-test-tokens) inherits the icon and username of the token owner
+- [Slack App user token](/slack-apps) with [`chat:write:user`](/docs/oauth-scopes) inherits icon and username of the token owner
+- [Slack App bot user token](/bot-users#share_your_bot_user_as_a_slack_app) inherits Slack App's icon and app's bot username
 
-#### Legacy identity rules in DMs
+#### Legacy identity rules in DMs 
 
 If you're using `icon_url`, `icon_emoji`, or `username` with `chat.postMessage` and a direct message, some special rules apply to make sure the receiver is crystal clear on just who is sending the message:
 
 - If `as_user` is false:
-  - Pass the DM channel's ID (`D023BB3L2`) as the value of `channel` to post to that DM channel _as the app, bot, or user associated with the token_. You can change the icon and username that go with the message using the `icon_url` and `username` parameters. The IM channel's ID can be retrieved through the [conversations.list](/methods/conversations.list) API method.
+  - Pass the DM channel's ID (`D123456`) as the value of `channel` to post to that DM channel _as the app, bot, or user associated with the token_. You can change the icon and username that go with the message using the `icon_url` and `username` parameters. The IM channel's ID can be retrieved through the [conversations.list](/methods/conversations.list) API method.
 - If `as_user` is true:
-  - Pass the DM channel's ID (`D023BB3L2`) or a user's ID (`U0G9QF9C6`) as the value of `channel` to post to that DM channel _as the app, bot, or user associated with the token_. The IM channel's ID can be retrieved through the [conversations.list](/methods/conversations.list) API method. When `as_user` is true, the caller may _not_ manipulate the icon and username on the message.
+  - Pass the DM channel's ID (`D123456`) or a user's ID (`U123456`) as the value of `channel` to post to that DM channel _as the app, bot, or user associated with the token_. The IM channel's ID can be retrieved through the [conversations.list](/methods/conversations.list) API method. When `as_user` is true, the caller may _not_ manipulate the icon and username on the message.
 
 ## Example responses
 
 ### Common successful response
 
-Typical success response
+The response includes the "timestamp ID" (`ts`) and the channel-like thing where the message was posted. It also includes the complete message object, as parsed by our servers. This may differ from the provided arguments as our servers sanitize links, attachments, and other properties. Your message may mutate.
 
 ```
 {
     "ok": true,
-    "channel": "C1H9RESGL",
+    "channel": "C123456",
     "ts": "1503435956.000247",
     "message": {
         "text": "Here's a message for you",
         "username": "ecto1",
-        "bot_id": "B19LU7CSY",
+        "bot_id": "B123456",
         "attachments": [
             {
                 "text": "This is an attachment",

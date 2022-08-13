@@ -84,10 +84,6 @@ This method renames a conversation. Some types of conversations cannot be rename
 
 The only the user that originally created a channel or an admin may rename it. Others will receive a `not_authorized` error.
 
-### Limits for workspace apps
-
-Because workspace apps can't act on behalf of users, they don't have the power to rename conversations, except when they're the owner/creator of the conversation.
-
 ## Naming
 
 Conversation names can only contain lowercase letters, numbers, hyphens, and underscores, and must be 80 characters or less. We will validate the submitted channel name and modify it to meet the above criteria. When calling this method, we recommend storing the channel's `name` value that is returned in the response.

@@ -35,7 +35,7 @@ HTTP
 
 - 
 ### Rate limits
-[Tier 3](/docs/rate-limits#tier_t3)
+[Tier 4](/docs/rate-limits#tier_t4)
 
 ## Arguments
 

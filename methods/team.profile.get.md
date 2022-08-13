@@ -74,12 +74,30 @@ This method is used to get the profile field definitions for this team.
 The optional `visibility` argument allows the client to filter the profile fields based on visibility. The following values are supported:
 
 - `all` is the default, and returns all fields.
-- `visible` means return only fields for which the `is_hidden` option is missing or false.
-- `hidden` means return only fields for which the `is_hidden` option is true.
+- `visible` returns only fields for which the `is_hidden` option is missing or false.
+- `hidden` returns only fields for which the `is_hidden` option is true.
 
-The response contains a `profile` item with an array of key value pairs. Right now only the `fields` key is supported, and it contains a list of field definitions for this team.
+The response contains a `profile` item with an array of key value pairs. Right now only the `fields` key is supported, which contains a list of field definitions for this team.
 
-Note that returned field definitions always have an `id`.
+There are two ways to update a field. The value of `is_scim` determines which method to use:
+
+- If `is_scim` is `True`, update the field via a SCIM API call
+- If `is_scim` is `False`, update the field via [`users.profile.set`](/methods/users.profile.set). You'll need its `id` to do so.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `id` | String | The ID of either the section or field |
+| `is_protected` | Boolean | |
+| `is_scim` | Boolean | If true, can be updated via SCIM APIs |
+| `field_name` | String | The name of the field |
+| `hint` | String | Any additional context the user may need to understand the field |
+| `label` | String | The text that will appear under the field or section |
+| `possible_values` | String | The values that allowed to be chosen by the user |
+| `options` | String | An object containing the `is_protected` and `is_scim` fields |
+| `ordering` | Integer | The placement of the field or section on the profile |
+| `section_id` | String | The `id` of the section the field is in |
+| `section_type` | String | The type of content in the section. Users can only create `custom` section types |
+| `type` | String | The format the field supports. Can be `file`, `text`, `user` and ... |
 
 ## Example responses
 
@@ -93,38 +111,38 @@ Typical success response
     "profile": {
         "fields": [
             {
-                "id": "Xf06054AAA",
+                "id": "111111ABC",
                 "ordering": 0,
                 "label": "Phone extension",
                 "hint": "Enter the extension to reach your desk",
                 "type": "text",
                 "possible_values": null,
-                "options": null,
-                "is_hidden": 1
+                "options": {
+                    "is_scim": true,
+                    "is_protected": true
+                },
+                "is_hidden": false,
+                "section_id": "123ABC"
             },
             {
-                "id": "Xf06054BBB",
+                "id": "222222ABC",
                 "ordering": 1,
                 "label": "Date of birth",
                 "hint": "When you were born",
                 "type": "date",
                 "possible_values": null,
-                "options": null
+                "options": {
+                    "is_scim": true,
+                    "is_protected": true
+                },
+                "is_hidden": true,
+                "section_id": "123ABC"
             },
             {
-                "id": "Xf06054CCC",
+                "id": "333333ABC",
                 "ordering": 2,
-                "label": "Facebook",
-                "hint": "Enter a link to your Facebook profile",
-                "type": "link",
-                "possible_values": null,
-                "options": null
-            },
-            {
-                "id": "Xf06054DDD",
-                "ordering": 3,
                 "label": "House",
-                "hint": "Hogwarts, obviously",
+                "hint": "Put on the sorting hat",
                 "type": "options_list",
                 "possible_values": [
                     "Gryffindor",
@@ -132,27 +150,30 @@ Typical success response
                     "Ravenclaw",
                     "Slytherin"
                 ],
-                "options": null
-            },
-            {
-                "id": "Xf06054EEE",
-                "ordering": 4,
-                "label": "Location",
-                "hint": "Office location (LDAP)",
-                "type": "text",
-                "possible_values": null,
                 "options": {
-                    "is_protected": 1
-                }
+                    "is_scim": false,
+                    "is_protected": false
+                },
+                "is_hidden": false,
+                "section_id": "456DEF"
+            }
+        ],
+        "sections": [
+            {
+                "id": "123ABC",
+                "team_id": "T123456",
+                "section_type": "contact",
+                "label": "Contact Information",
+                "order": 1,
+                "is_hidden": true
             },
             {
-                "id": "Xf06054FFF",
-                "ordering": 5,
-                "label": "Manager",
-                "hint": "The boss",
-                "type": "user",
-                "possible_values": null,
-                "options": null
+                "id": "456DEF",
+                "team_id": "T123456",
+                "section_type": "custom",
+                "label": "About Me",
+                "order": 2,
+                "is_hidden": true
             }
         ]
     }

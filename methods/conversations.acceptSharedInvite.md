@@ -238,6 +238,12 @@ The user accepting the invite is not a member of the team provided in the `team_
 | `invalid_recipient_team` | 
 The accepting team does not match the expected recipient team.
  |
+| `channel_conversion_in_progress` | 
+Unable to create a channel connection while a channel conversion is in progress
+ |
+| `failed_to_start_trial` | 
+Unable to initiate a trial on shared invite acceptance
+ |
 | `not_authed` | 
 No authentication token provided.
  |

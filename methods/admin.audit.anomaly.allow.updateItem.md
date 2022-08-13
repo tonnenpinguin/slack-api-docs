@@ -1,7 +1,3 @@
-## Notices
-
-**Beta API** —&nbsp;this API is in beta, and is subject to change without the usual notice period for changes.
-
 ## Facts
 
 ### Method access
@@ -15,23 +11,21 @@ Python
 Java
 
 HTTP
-`POSThttps://slack.com/api/apps.manifest.update`
+`POSThttps://slack.com/api/admin.audit.anomaly.allow.updateItem`
 
 [Bolt for Java](/tools/bolt)
-`app.client().appsManifestUpdate`
+`app.client().adminAuditAnomalyAllowUpdateItem`
 [Powered by Bolt](/tools/bolt)
 
 [Bolt for Python](/tools/bolt)
-`app.client.apps_manifest_update`
+`app.client.admin_audit_anomaly_allow_updateItem`
 [Powered by Bolt](/tools/bolt)
 
 [Bolt for JavaScript](/tools/bolt)
-`app.client.apps.manifest.update`
+`app.client.admin.audit.anomaly.allow.updateItem`
 [Powered by Bolt](/tools/bolt)
 
 ### Required scopes
-
-[App configuration token](/authentication/config-tokens)
 
 ### Content types
 
@@ -39,83 +33,61 @@ HTTP
 
 - 
 ### Rate limits
-[Tier 1](/docs/rate-limits#tier_t1)
+[Tier 2](/docs/rate-limits#tier_t2)
 
 ## Arguments
 
-Required arguments
+Optional arguments
 
-`token`
+`trusted_asns`
 
-[token](/authentication/token-types)
+array
 
-_·_Required
+_·_Optional
 
-Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter.
+allow list of Autonomous System Numbers (ASN) in the enterprise grid configuarion
 
-**Example**
-`xxxx-xxxxxxxxx-xxxx`
+`trusted_cidr`
 
-`app_id`
+array
 
-_·_Required
+_·_Optional
 
-The ID of the app whose configuration you want to update.
-
-`manifest`
-
-[manifest object as string](/reference/manifests#fields)
-
-_·_Required
-
-A JSON app manifest encoded as a string. This manifest **must** use a valid [app manifest schema - read our guide to creating one](/reference/manifests#fields). As this method entirely _replaces_ any previous configuration, manifest must contain both unmodified and modified fields.
+allow list of IPv4 addressses using cidr notation in the enterprise grid configuarion
 
 ## Usage info
 
-### Using manifests 
+API to allow enterprise grid admins to write/overwrite the allow list of IP blocks and ASNs from the enterprise configuration.
 
-This method accepts an app manifest as an argument. Read our [guide to app manifests](/reference/manifests) to learn how create or reuse them.
+_NOTE:_ Writing to this endpoint will over write previously added IP ranges and ASNs. If customers are adding new IP ranges and ASNs_they must include all of the previously added IP ranges and ASNs in your new API call or they will be overwritten._
 
-If you receive an `invalid_manifest` response when trying to use any App Manifest API, it indicates that the manifest you supplied didn't match the [correct schema](/reference/manifests#fields).
+The `token` argument is **required** and is a session token.
 
-To better locate the problem with your manifest, the `invalid_manifest` error should be accompanied by an `errors` array:
+The `trusted_asns` argument is **optional** and is an allow list of asns as integers.
+
+The `trusted_cidrs` argument is **optional** and is an allow list of IPs using CIDR notation as strings.
+
+The response is a JSON string containing the field `ok`. Sucessful writes have a `true` status while unsuccessful writes that are not errors will return `false`.
+
+## Example Request:
 
 ```
 {
-	"ok": false,
-	"error": "invalid_manifest",
-	"errors": [
-		{
-			"message": "Event Subscription requires either Request URL or Socket Mode Enabled",
-			"pointer": "/settings/event_subscriptions"
-		},
-		{
-			"message": "Interactivty requires a Request URL",
-			"pointer": "/settings/interactivity"
-		},
-		{
-			"message": "Interactivity requires Socket Mode enabled",
-			"pointer": "/settings/interactivity"
-		}
-	]
-}
+	"token":"xoxb-...",
+	 "trusted_cidr":["8.8.8.8/24","8.8.4.4/22"],
+	 "trusted_asn":[34245,8530]
+	 }
 ```
 
-Each of the items in this array contain a `message` which describes the problem, and a `pointer` which indicates the problem's location within your supplied manifest. Use these two pieces of info to correct your manifest and try again.
+s:
+
+```
+{
+		"ok": true
+	}
+```
 
 ## Example responses
-
-### Common successful response
-
-Typical success response
-
-```
-{
-    "ok": true,
-    "app_id": "A012ABCD0A0",
-    "permissions_updated": false
-}
-```
 
 ## Errors
 
@@ -123,32 +95,20 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
-| `app_not_eligible` | 
-The specified app is not elgible for this API.
+| `invalid_field_or_data` | 
+user attempted to write and invalid field or data to the team config
  |
-| `invalid_app_id` | 
-The app id passed is invalid.
+| `unable_to_process_post_request` | 
+The user sent a malformed post request
  |
-| `invalid_manifest` | 
-The provided manifest file does not validate against schema.
+| `unsupported_action_describe` | 
+The user specified describe action is unsupported
  |
-| `invalid_app` | 
-An app created from the provided manifest would not be valid.
+| `unsupported_action_put` | 
+The user specified put action is unsupported
  |
-| `failed_creating_app` | 
-Failed to create the app model
- |
-| `failed_adding_collaborator` | 
-Failed writing a collaborator record for this new app
- |
-| `unknown_method` | 
-Unknown method
- |
-| `no_permission` | 
-The workspace token used in this request does not have the permissions necessary to complete the request. Make sure your app is a member of the conversation it's attempting to post a message to.
- |
-| `internal_error` | 
-The server could not complete your operation(s) without encountering an error, likely due to a transient issue on our end. It's possible some aspect of the operation succeeded before the error was raised.
+| `endpoint_unavailable` | 
+The requested endpoint is currently unavailable.
  |
 | `not_authed` | 
 No authentication token provided.
@@ -167,6 +127,9 @@ Authentication token is for a deleted user or workspace or the app has been remo
  |
 | `token_expired` | 
 Authentication token has expired
+ |
+| `no_permission` | 
+The workspace token used in this request does not have the permissions necessary to complete the request. Make sure your app is a member of the conversation it's attempting to post a message to.
  |
 | `org_login_required` | 
 The workspace is undergoing an enterprise migration and will not be available until migration is complete.
@@ -233,6 +196,9 @@ The service is temporarily unavailable
  |
 | `fatal_error` | 
 The server could not complete your operation(s) without encountering a catastrophic error. It's possible some aspect of the operation succeeded before the error was raised.
+ |
+| `internal_error` | 
+The server could not complete your operation(s) without encountering an error, likely due to a transient issue on our end. It's possible some aspect of the operation succeeded before the error was raised.
  |
 
 ## Warnings

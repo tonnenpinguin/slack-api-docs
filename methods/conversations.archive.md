@@ -72,10 +72,6 @@ ID of conversation to archive
 
 This method archives a conversation. Not all types of conversations can be archived.
 
-### Limits for workspace apps
-
-Because workspace apps can't act on behalf of users, they don't have the power to archive conversations, except when they're the owner/creator of the conversation.
-
 ## Example responses
 
 ### Common successful response

@@ -87,7 +87,7 @@ The token provided is not associated with an admin.
 Value given for `channel_id` was invalid.
  |
 | `channel_type_not_supported` | 
-Value given for `channel_id` was a group dm, direct message, or #general channel.
+Value given for `channel_id` was a #general channel.
  |
 | `retention_override_not_allowed` | 
 The current retention policy disallows modifying the retention policy of this channel.

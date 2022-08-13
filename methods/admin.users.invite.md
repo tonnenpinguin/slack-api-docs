@@ -222,6 +222,9 @@ The team calling this method was invalid.
 | `failed_to_send_invite` | 
 The invite failed to send.
  |
+| `not_an_admin` | 
+The user token does not have admin privileges.
+ |
 | `not_authed` | 
 No authentication token provided.
  |

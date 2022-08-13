@@ -153,6 +153,9 @@ The provided manifest file does not validate against schema.
 | `invalid_app` | 
 An app created from the provided manifest would not be valid.
  |
+| `app_not_eligible` | 
+The specified app is not elgible for this API.
+ |
 | `failed_creating_app` | 
 Failed to create the app model
  |

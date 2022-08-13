@@ -100,10 +100,6 @@ Create a public or private channel using this [Conversations API](/docs/conversa
 
 Use [`conversations.open`](/methods/conversations.open) to initiate or resume a direct message or multi-person direct message.
 
-### Limits for workspace apps
-
-At least one user needs to be invited when creating a public or private conversation. Otherwise workspace apps could create invisible channels, which might cause a few problems.
-
 ## Naming
 
 Channel names may only contain lowercase letters, numbers, hyphens, and underscores, and must be 80 characters or less. When calling this method, we recommend storing both the channel's `id` and `name` value that returned in the response.

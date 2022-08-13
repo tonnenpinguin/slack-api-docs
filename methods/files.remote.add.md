@@ -128,7 +128,7 @@ Preview of the document via `multipart/form-data`.
 
 The `add` method adds a remote file to Slack. Adding a file **does not** share it to a channel. To make your beautiful remote file visible, use the [`files.remote.share`](/methods/files.remote.share) method.
 
-Remote files exist across the whole workspace (or organization, for Enterprise Grid). Because of that, remote files _must_ be added by bots with the [`bot` scope](/scopes/bot), not by an individual user.
+Remote files exist across the whole workspace (or organization, for Enterprise Grid). Because of that, remote files _must_ be added by bots with the [`bot` scope](/scopes/bot), not by an individual user. Dimension requirements for previews are a minimum of `800w x 400h`.
 
 `preview_image` is displayed when your remote file is [shared](/methods/files.remote.share). It's a binary image file.
 
